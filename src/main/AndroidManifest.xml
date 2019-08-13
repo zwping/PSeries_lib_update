@@ -1,2 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="win.zwping.update" />
+          package="win.zwping.update">
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+
+    <application>
+        <activity android:name=".UpdateAc"
+                  android:theme="@style/TranslucentTheme"/>
+        <service android:name=".DownService"/>
+    </application>
+
+</manifest>
