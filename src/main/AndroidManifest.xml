@@ -6,7 +6,7 @@
     <application>
         <activity android:name=".UpdateAc"
                   android:theme="@style/TranslucentTheme"/>
-        <service android:name=".DownService"/>
+        <service android:name=".DownApkService"/>
     </application>
 
 </manifest>

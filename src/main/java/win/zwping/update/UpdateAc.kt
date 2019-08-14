@@ -5,21 +5,15 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import com.blankj.rxbus.RxBus
-import com.lzy.okgo.model.Progress
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.Permission
 import com.yanzhenjie.permission.runtime.Permission.READ_EXTERNAL_STORAGE
 import com.yanzhenjie.permission.runtime.Permission.WRITE_EXTERNAL_STORAGE
 import win.zwping.code.basic.BasicAc
 import win.zwping.code.review.PProgressBar
-import win.zwping.code.utils.AcUtil
 import win.zwping.code.utils.IntentUtil
-import win.zwping.code.utils.ServiceUtil
-import win.zwping.code.utils.ToastUtil
 import win.zwping.frame.RxBusUtil
 import win.zwping.frame.comm.CommPop
-import win.zwping.frame.lis.RxBusCallback
 import java.io.File
 
 
@@ -91,7 +85,7 @@ class UpdateAc : BasicAc() {
     private fun permission() {
         AndPermission.with(this).runtime().permission(Permission.Group.STORAGE)
             .onGranted {
-                startService(Intent(this, DownService::class.java).also {
+                startService(Intent(this, DownApkService::class.java).also {
                     it.putExtra("url", intent?.getStringExtra("url"))
                 })
             }.onDenied {

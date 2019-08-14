@@ -12,7 +12,7 @@ import win.zwping.frame.RxBusUtil
 import win.zwping.frame.http.Http
 import java.io.File
 
-class DownService : BasicLifeCycleService() {
+class DownApkService : BasicLifeCycleService() {
 
     override fun onBind(intent: Intent?) = null
 
@@ -39,7 +39,7 @@ class DownService : BasicLifeCycleService() {
         OkGo.get<File>(url)
             .execute(object : FileCallback() {
                 override fun onSuccess(response: Response<File>?) {
-                    println(response?.body()?.path)
+                    // println(response?.body()?.path)
                     RxBusUtil.post(response?.body()?.path,"sucDown")
                 }
 
@@ -56,7 +56,7 @@ class DownService : BasicLifeCycleService() {
                 override fun downloadProgress(progress: Progress?) {
                     super.downloadProgress(progress)
                     progress?.also {
-                        println(((it.currentSize.toFloat() / it.totalSize) * 100).toInt())
+                        // println(((it.currentSize.toFloat() / it.totalSize) * 100).toInt())
                         RxBusUtil.post(((it.currentSize.toFloat() / it.totalSize) * 100).toInt(), "ingDown")
                     }
                 }
