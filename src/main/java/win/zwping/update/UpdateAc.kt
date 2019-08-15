@@ -11,6 +11,7 @@ import com.yanzhenjie.permission.runtime.Permission.READ_EXTERNAL_STORAGE
 import com.yanzhenjie.permission.runtime.Permission.WRITE_EXTERNAL_STORAGE
 import win.zwping.code.basic.BasicAc
 import win.zwping.code.review.PProgressBar
+import win.zwping.code.utils.AnimatorUtil
 import win.zwping.code.utils.IntentUtil
 import win.zwping.frame.RxBusUtil
 import win.zwping.frame.comm.CommPop
@@ -57,7 +58,12 @@ class UpdateAc : BasicAc() {
         RxBusUtil.subscribeI(this, "startDown") {
             pop.findViewById<View>(R.id.confirm_ptv)?.isEnabled = false
             pop.setConfirmTxt("下载中...").setCancelHide()
+            pbar.visibility = View.INVISIBLE
             pop.findViewById<ViewGroup>(R.id.bottom_ly)?.addView(pbar)
+            pbar.post {
+                AnimatorUtil.translationX(pbar, -pbar.width.toFloat(), 0F, 500)
+                pbar.visibility = View.VISIBLE
+            }
         }
         RxBusUtil.subscribeI(this, "ingDown") { pbar.progress = it }
         RxBusUtil.subscribeS(this, "sucDown") {
