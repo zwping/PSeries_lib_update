@@ -1,22 +1,10 @@
 package win.zwping.update
 
-import android.content.Context
-import android.graphics.Color
-import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import com.yanzhenjie.permission.AndPermission
 import win.zwping.code.comm.Bean
-import win.zwping.code.review.PProgressBar
-import win.zwping.code.review.PTextView
 import win.zwping.code.utils.AcUtil
-import win.zwping.code.utils.AppUtil
 import win.zwping.code.utils.ConversionUtil.covInteger
 import win.zwping.code.utils.EmptyUtil.isNotEmpty
-import win.zwping.code.utils.EnUtil.covBundle
-import win.zwping.code.utils.ToastUtil
-import win.zwping.code.utils.ViewUtil
-import win.zwping.frame.comm.CommPop
+import win.zwping.code.utils.BoxedUtil.covBundle
 
 object UpdateUtil {
 
