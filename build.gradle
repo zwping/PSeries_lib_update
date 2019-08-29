@@ -33,6 +33,4 @@ android {
 
 dependencies {
     api project(':plib_frame')
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -1,7 +1,6 @@
 package win.zwping.update
 
 import android.content.Intent
-import android.os.IBinder
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.callback.FileCallback
 import com.lzy.okgo.model.Progress
