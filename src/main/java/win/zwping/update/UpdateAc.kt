@@ -3,8 +3,10 @@ package win.zwping.update
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.Permission
 import com.yanzhenjie.permission.runtime.Permission.READ_EXTERNAL_STORAGE
@@ -45,7 +47,7 @@ class UpdateAc : BasicAc() {
         CommPop(this).also {
             it.setOutsideDismiss().setCancelHide().setBackPressDismiss()
                 .setTitle("发现新版本 (${intent?.getStringExtra("newVersionName")})")
-                .setContent("${intent?.getStringExtra("describe")}")
+                .setContent("${intent?.getStringExtra("describe")}").setHandleView { it?.findViewById<TextView>(R.id.content_ptv)?.gravity = Gravity.START }
                 .setConfirmTxt("确认升级")
         }
     }

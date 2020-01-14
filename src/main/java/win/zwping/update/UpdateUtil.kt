@@ -17,7 +17,8 @@ object UpdateUtil {
         browserUpdateUrl: String?,
         callBack: UpdateCallBack?
     ) {
-        if (isNotEmpty(newVersionName) &&
+        if (isNotEmpty(newVersionName)
+            &&
             covInteger(newVersionName?.replace(".", "")) >
             covInteger(oldVersionName?.replace(".", ""))
         ) {
