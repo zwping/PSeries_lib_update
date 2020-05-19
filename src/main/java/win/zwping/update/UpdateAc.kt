@@ -23,7 +23,7 @@ import java.io.File
 /**
  * describe：透明activity
  *     note：
- *  @author：zwp on 2019-08-13 mail：1101558280@qq.com web: http://www.zwping.win
+ *  @author：zwp on 2019-08-13 mail：1101558280@qq.com web: https://www.zwping.com
  */
 class UpdateAc : BasicAc() {
 
